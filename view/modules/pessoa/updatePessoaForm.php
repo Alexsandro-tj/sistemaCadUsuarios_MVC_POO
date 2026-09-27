@@ -10,7 +10,7 @@
 
 <body>
     <?php 
-    echo "<form action='/pessoa/update?id="."'"."method='$_GET'>
+    echo "<form action='/pessoa/update?id={$_GET['id_up']}"."'"."method='GET'>
         <label for=''>Nome</label>
         <input type='text' name='nome_up' id='' placeholder=''>
         <label for=''>CPF</label>

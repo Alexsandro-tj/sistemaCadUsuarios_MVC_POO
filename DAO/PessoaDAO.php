@@ -28,12 +28,12 @@ class PessoaDao
      }
      public function atualiza(PessoaModel $modelupadate) 
      {
-          $sql = "UPDATE pessoas SET (nome, cpf, data_nascimento) VALUES ('?','?' ,'?,) WHERE = ?";
+          $sql = "UPDATE pessoas SET (nome, cpf, data_nascimento) VALUES ('?','?' ,'?',) WHERE = '?' ";
           $stmt = $this->conexao->prepare($sql);
           $stmt->bindValue(1, $modelupadate->nome);
           $stmt->bindValue(2, $modelupadate->cpf);
           $stmt->bindValue(3, $modelupadate->data_nascimento);
-          
+          $stmt->bindValue(4, $modelupadate->id);
           $stmt->execute();
           //return $stmt->fetchAll(PDO::FETCH_CLASS);
      }
