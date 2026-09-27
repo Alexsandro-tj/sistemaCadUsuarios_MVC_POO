@@ -26,9 +26,9 @@ class PessoaDao
           //propriedade que vai executar o codigo acima.
           $stmt->execute();
      }
-     public function atualiza(PessoaModel $modelupadate) 
+     public function atualiza(PessoaModel $modelupadate)
      {
-          $sql = "UPDATE pessoas SET (nome, cpf, data_nascimento) VALUES ('?','?' ,'?',) WHERE = '?' ";
+          $sql = "UPDATE pessoas SET nome=?, cpf=?, datanascimento =? WHERE id=? ";
           $stmt = $this->conexao->prepare($sql);
           $stmt->bindValue(1, $modelupadate->nome);
           $stmt->bindValue(2, $modelupadate->cpf);

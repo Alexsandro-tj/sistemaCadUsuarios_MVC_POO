@@ -9,16 +9,17 @@
 </head>
 
 <body>
-    <?php 
-    echo "<form action='/pessoa/update?id={$_GET['id_up']}"."'"."method='GET'>
-        <label for=''>Nome</label>
+    <?php
+    $idUpdate = $_GET['id'];
+    
+    echo "<form action='/pessoa/update'" . "method='get'>
+        <label>Nome</label>
         <input type='text' name='nome_up' id='' placeholder=''>
-        <label for=''>CPF</label>
+        <label >CPF</label>
         <input type='number' name='cpf_up' id='' placeholder=''>
-        <label for=''>Data Nascimento</label>
+        <label >Data Nascimento</label>
         <input type='date' name='data_nascimento_up' id='' placeholder=''>
-        <label for=''>ID</label>
-        <input type='number' name='id_up' id=''>
+        <input type='hidden' name='id_up' id='' value='$idUpdate'>
         <input type='submit' value='Update'>
     </form>";
     ?>
