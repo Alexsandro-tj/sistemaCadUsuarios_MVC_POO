@@ -28,6 +28,7 @@
                 "<td> " . $item->cpf . " </td>" .
                 "<td> " . $item->datanascimento . "</td>" .
                 "<td><button><a href='/pessoa/updatePessoaForm?id=" . $item->id . "'>Editar<a></button>" .
+                "<td><button><a href='/pessoa/delete?id=" . $item->id . "'>Excluir<a></button>" .
                 "</tr>";
         ?>
     </table>

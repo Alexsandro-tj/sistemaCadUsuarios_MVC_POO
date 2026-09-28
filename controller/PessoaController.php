@@ -53,4 +53,12 @@ class PessoaController
     {
         include 'view/modules/pessoa/updatePessoaForm.php';
     }
+    public static function deleteUser()
+    {
+        include 'model/PessoaModel.php';
+        $modelDelete = new PessoaModel();
+        $modelDelete->id = $_GET['id'];
+        $modelDelete->delete($modelDelete->id);
+        header("location:/pessoa");
+    }
 }

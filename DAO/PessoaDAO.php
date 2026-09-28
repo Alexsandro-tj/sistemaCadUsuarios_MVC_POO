@@ -2,7 +2,7 @@
 class PessoaDao
 {
      //delcaração da propriedade que vai receber a conexão
-     public $conexao;
+     public object $conexao;
      //Método ocntrutor da conexão. Quando um objeto for instancia da Classe PessoaDAO, o método construtor vai fazer uma conexão automatica depois de instanciado
      public function __construct()
      {
@@ -49,5 +49,12 @@ class PessoaDao
           $stmt->execute();
           // retorno das linha em formato de Array associativo
           return $stmt->fetchAll(PDO::FETCH_CLASS);
+     }
+     public function delete(int $id)
+     {
+          $sql = "DELETE FROM pessoas WHERE id = ?";
+          $stmt = $this->conexao->prepare($sql);
+          $stmt->bindValue(1, $id);
+          $stmt->execute();
      }
 }

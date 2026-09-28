@@ -25,6 +25,9 @@ switch ($url) {
     case '/pessoa/update':
         PessoaController::update();
         break;
+    case '/pessoa/delete':
+        PessoaController::deleteUser();
+        break;
 
     default:
         echo "erro 404";
